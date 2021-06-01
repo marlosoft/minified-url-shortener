@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+
+{% block contents %}
+  <div class="w-100 bg-primary">
+    <div class="container bg-primary mb-3">
+      <div class="row">
+        <div class="col-12 py-4 py-lg-5 text-justify">
+          <h1 class="d-block d-lg-none h4">
+            <i class="fas fa-link mr-2 text-white"></i>
+            <span class="text-white font-weight-bold text-uppercase">Simplify your URL</span>
+          </h1>
+          <h2 class="d-none d-lg-block h2">
+            <i class="fas fa-link mr-2 text-white"></i>
+            <span class="text-white font-weight-bold text-uppercase">Simplify your URL</span>
+          </h2>
+          <p class="mb-0 text-white">Anonymously minify your URL to make it shareable everywhere for free.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-100 mb-3">
+    <div class="container">
+      {{ form_start(form) }}
+        {% for msg in app.flashes('success') %}
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="fas fa-fw fa-check-circle"></i>
+            <span class="ml-1">{{ msg }}</span>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        {% endfor %}
+        <div class="form-row">
+          <div class="col-12 mb-0">
+            <label class="text-uppercase">URL to shorten</label>
+          </div>
+          <div class="col-12 col-md-8 col-lg-9 mb-3">
+            <label class="sr-only" for="{{ form.path.vars.id }}">URL</label>
+            {{ form_widget(form.path) }}
+            {{ form_errors(form.path) }}
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 mb-3">
+            <button class="btn btn-success btn-lg btn-block">
+              <span class="text-uppercase">Minify</span>
+            </button>
+          </div>
+        </div>
+      {{ form_end(form) }}
+      <div class="row">
+        <div class="col-12 mb-3">
+          <ul class="fa-ul ml-3 pl-2">
+            <li class="text-justify">
+              <span class="fa-li"><i class="fas fa-check text-success"></i></span>
+              All <span class="text-warning">{{ app.request.schemeAndHttpHost }}</span> URLs are publicly accessible by everyone.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="form-row mb-3">
+        <div class="col-12 col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-info"><i class="mr-1 far fa-thumbs-up"></i> EASY</h5>
+              <p class="card-text text-dark mb-0 text-justify">Easy and fast to use, enter a long link to get your URL shortened.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-info"><i class="mr-1 fas fa-link"></i> SHORT</h5>
+              <p class="card-text text-dark mb-0 text-justify">Paste any link, what ever length, URL always gets shortened.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-info"><i class="mr-1 fas fa-shield-alt"></i> SECURE</h5>
+              <p class="card-text text-dark mb-0 text-justify">Our service always use HTTPS protocol and data encryption.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <h5 class="text-info">
+            <i class="fas fa-check-circle mr-1"></i>
+            <span class="text-uppercase">Plain and simple</span>
+          </h5>
+          <p class="text-dark text-justify">
+            No accounts required. Seamlessly reduce long URLs into a short and easy to remember link.
+            For premium features like dashboards, analytics, and a lot more, signup to
+            <a href="https://bitly.com" class="text-warning text-decoration-none">Bitly</a>
+            or <a href="https://rebrandly.com" class="text-primary text-decoration-none">Rebrandly</a>
+          </p>
+        </div>
+        <div class="col-12 col-md-6">
+          <h5 class="text-info">
+            <i class="fas fa-user-shield mr-1"></i>
+            <span class="text-uppercase">Secure and private</span>
+          </h5>
+          <p class="text-dark text-justify">
+            On top of using HTTPS protocol, no other information will be asked except for the long URL and the optional
+            short code. All access to our site is anonymous, no access logs recorded.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block contents %}
+  <div class="w-100 bg-danger">
+    <div class="container bg-danger mb-3">
+      <div class="row">
+        <div class="col-12 py-4 py-lg-5">
+          <h1 class="d-block d-lg-none h4">
+            <i class="far fa-sad-tear mr-2 text-white"></i>
+            <span class="text-white font-weight-bold text-uppercase">Something is wrong</span>
+          </h1>
+          <h2 class="d-none d-lg-block h2">
+            <i class="far fa-sad-tear mr-2 text-white"></i>
+            <span class="text-white font-weight-bold text-uppercase">Something is wrong</span>
+          </h2>
+          <p class="mb-0 text-white">An error has occurred. Please check the following possible reasons below.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-100 mb-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 pt-3">
+          <ul class="fa-ul ml-4 mb-md-5">
+            <li class="text-justify mb-3 mb-md-1">
+              <span class="fa-li"><i class="fas fa-chevron-circle-right text-success"></i></span>
+              We can't find the page you are looking for.
+            </li>
+            <li class="text-justify mb-3 mb-md-1">
+              <span class="fa-li"><i class="fas fa-chevron-circle-right text-success"></i></span>
+              The link might be broken or the page has been removed.
+            </li>
+            <li class="text-justify mb-3 mb-md-1">
+              <span class="fa-li"><i class="fas fa-chevron-circle-right text-success"></i></span>
+              Make sure you typed in the page address correctly or go back to your previous page.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-auto mt-3">
+          <a href="{{ path('app_url_index') }}" class="btn btn-block btn-light border px-md-5">
+            <i class="fas fa-chevron-left"></i>
+            <span class="ml-2 text-uppercase">Back</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

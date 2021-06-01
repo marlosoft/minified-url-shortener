@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="description" content="Minified URL Shortener - Anonymously minify your URL to make it shareable everywhere for free. "/>
+    <title>Minified URL Shortener</title>
+    <link rel="stylesheet" href="{{ preload(asset('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap')) }}"/>
+    {% block stylesheets %}
+      {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+  </head>
+  <body class="d-flex flex-column h-100 bg-light">
+    {% include 'header.html.twig' %}
+    <main role="main" class="flex-shrink-0">
+      {% block contents %}{% endblock %}
+    </main>
+    {% include 'footer.html.twig' %}
+    {% block javascripts %}
+      {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+  </body>
+</html>
